@@ -105,6 +105,18 @@ Tiny safety rule:
 
 > Generate logs, not chaos. 🧯
 
+## 🖼️ Evidence Screenshots
+
+The following screenshots were captured during the PowerShell telemetry validation tests.
+
+| Test | Screenshot File | Purpose |
+|---|---|---|
+| Test 1 - Normal PowerShell baseline | `test-01-normal-powershell-sysmon-event.png` | Shows Sysmon Event ID 1 for normal PowerShell execution |
+| Test 2 - Encoded PowerShell | `test-02-encoded-powershell-sysmon-event.png` | Shows Sysmon Event ID 1 for PowerShell with `-EncodedCommand` |
+| Test 3 - Script Block Logging check | `test-03-powershell-4104-check.png` | Shows PowerShell Operational log check for Event ID 4104 |
+
+Safety note: Screenshots are from the lab environment and contain only lab-generated telemetry.
+
 ---
 
 # ✅ Test 1: Normal PowerShell Baseline
@@ -181,6 +193,16 @@ Expected evidence:
 ## Observed Output
 
 The normal PowerShell baseline test was visible in Sysmon process creation output.
+
+---
+
+### Screenshot Evidence
+
+![Test 1 - Normal PowerShell Sysmon Event](test-01-normal-powershell-sysmon-event.png)
+
+This screenshot shows Sysmon Event ID 1 capturing normal PowerShell process creation from the baseline test.
+
+---
 
 Observed result:
 
@@ -307,6 +329,16 @@ Expected evidence:
 
 The encoded PowerShell execution was visible in Sysmon process creation output.
 
+---
+
+### Screenshot Evidence
+
+![Test 2 - Encoded PowerShell Sysmon Event](test-02-encoded-powershell-sysmon-event.png)
+
+This screenshot shows Sysmon Event ID 1 capturing PowerShell execution with the `-EncodedCommand` parameter.
+
+---
+
 Observed result:
 
 | Observation                         | Result |
@@ -400,6 +432,16 @@ Expected evidence:
 ## Observed Output
 
 PowerShell Script Block Logging events were expected from the query.
+
+---
+
+### Screenshot Evidence
+
+![Test 3 - PowerShell Script Block Logging Check](test-03-powershell-4104-check.png)
+
+This screenshot shows the PowerShell Operational log query for Event ID 4104 Script Block Logging.
+
+---
 
 Observed result:
 
